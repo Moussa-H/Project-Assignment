@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate
 } from "react-router-dom";
 import { Provider} from "react-redux";
 import store from "./redux/store";
@@ -28,7 +29,7 @@ const App = () => {
             path="/user/:id"
             element={<PrivateRoute element={UserPage} />}
           />
-         
+          <Route path="/*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
     </Provider>
